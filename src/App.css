@@ -40,6 +40,10 @@ html{
   color: #99ccff;
 }
 
+.nav{
+  position: fixed;
+}
+
 
 .MuiList-root{
   background-color: var(--back);
@@ -47,6 +51,14 @@ html{
 
 .App{
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.firstScreen{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .backdrop{
@@ -108,10 +120,6 @@ html{
   40% {
     transform: rotate(-45deg) translate(0, 0);
   }
-}
-
-.MuiTypography-root .nav:hover{
-  color: blueviolet;
 }
 
 @media only screen and (min-width: 900px){
