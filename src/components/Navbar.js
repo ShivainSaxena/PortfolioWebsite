@@ -11,12 +11,12 @@ const Navbar = () => {
 
     return ( 
         <div>
-            <StyledEngineProvider injectFirst >
-                <Grid container spacing={1} sx={{marginTop: '5px'}} className='nav'>
+            <StyledEngineProvider injectFirst>
+                <Grid container spacing={1} sx={{marginTop: '5px'}} >
                     <Grid item xs={1}>
                     </Grid>
-                    <Grid item xs={3} md={2}>
-                        <img src={logo} alt="logo" className='logo'/>
+                    <Grid item xs={3} md={2} >
+                        <img src={logo} alt="logo" className='logo' />
                     </Grid>
                     <Grid item xs={7} >
                         <Box justifyContent={'flex-end'} sx={{display: {xs: 'flex', md: 'none'}}}>
@@ -61,33 +61,33 @@ const Navbar = () => {
                         </Router>
                 
                         <Router >
-                        <Box sx={{display: {xs: 'none', md: 'flex'}, marginTop: '25px'}} justifyContent={'space-evenly'}>
-                            <Link component={RouterLink} underline='none' to="/">
-                            <Typography variant='h6'>
-                                Home
-                            </Typography>
-                            </Link>
-                            <Link component={RouterLink} underline='none' to="/aboutme">
-                            <Typography variant='h6'>
-                                About Me
-                            </Typography>
-                            </Link>
-                            <Link component={RouterLink} underline='none' to="/skills">
-                            <Typography variant='h6'>
-                                Skills
-                            </Typography>
-                            </Link>
-                            <Link component={RouterLink} underline='none' to="/projects">
-                            <Typography variant='h6'>
-                                Projects
-                            </Typography>
-                            </Link>
-                            <Link component={RouterLink} underline='none' to="/contact">
-                            <Typography variant='h6'>
-                                Contact
-                            </Typography>
-                            </Link>
-                        </Box>
+                            <Box sx={{display: {xs: 'none', md: 'flex'}, marginTop: '25px'}} justifyContent={'space-between'} >
+                                <Link component={RouterLink} underline='none' to="/">
+                                <Typography variant='h5'>
+                                    Home
+                                </Typography>
+                                </Link>
+                                <Link component={RouterLink} underline='none' to="/aboutme">
+                                <Typography variant='h5'>
+                                    About Me
+                                </Typography>
+                                </Link>
+                                <Link component={RouterLink} underline='none' to="/skills">
+                                <Typography variant='h5'>
+                                    Skills
+                                </Typography>
+                                </Link>
+                                <Link component={RouterLink} underline='none' to="/projects">
+                                <Typography variant='h5'>
+                                    Projects
+                                </Typography>
+                                </Link>
+                                <Link component={RouterLink} underline='none' to="/contact">
+                                <Typography variant='h5'>
+                                    Contact
+                                </Typography>
+                                </Link>
+                            </Box>
                         
                         </Router>
                         

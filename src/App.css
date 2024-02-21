@@ -19,16 +19,17 @@ html{
   height: 60px;
 }
 
-.MuiTypography-root{
+body .MuiTypography-root{
   color: white;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-.MuiTypography-h6:hover{
+.MuiTypography-h5:hover{
   background: linear-gradient(to bottom right, #5B7FFF, #33CCFC);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -40,10 +41,6 @@ html{
   color: #99ccff;
 }
 
-.nav{
-  position: fixed;
-}
-
 
 .MuiList-root{
   background-color: var(--back);
@@ -51,8 +48,6 @@ html{
 
 .App{
   position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
 .firstScreen{
@@ -86,7 +81,7 @@ html{
   text-align: center;
 }
 
-.mainDesc{
+body .mainDesc{
   font-size: clamp(1.25rem, 5vw , 2.125rem);
   text-align: center;
 }
@@ -110,6 +105,31 @@ html{
   box-sizing: border-box;
 }
 
+.profile{
+  width: 80%;
+  height: auto;
+  max-width: 250px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+#aboutTitle{
+  margin-bottom: 22px;
+  font-size: clamp(2.75rem, 7vw, 5.75rem);
+  background: linear-gradient(to bottom right, #5B7FFF, #33CCFC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#aboutBody{
+  margin-top: 15px;
+  line-height: 1.8;
+  font-size: clamp(1rem, 3vw, 2.25rem);
+}
+
+
+
 @keyframes bob {
   0% {
     transform: rotate(-45deg) translate(0, 0);
@@ -119,6 +139,17 @@ html{
   }
   40% {
     transform: rotate(-45deg) translate(0, 0);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .profile{
+    width: 35%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    height: fit-content ;
+    margin: 0 0 40px 30px;
+    max-width: none;
   }
 }
 
