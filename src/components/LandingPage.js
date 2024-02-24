@@ -5,6 +5,7 @@ import { StyledEngineProvider } from '@mui/material/styles';
 import { motion } from "framer-motion";
 import Aboutsection from "./Aboutsection";
 import Experience from './Experience';
+import Footer from './Footer';
 
 
 
@@ -81,6 +82,14 @@ const LandingPage = () => {
             </div>
             <Aboutsection/>
             <Experience />
+            <Box display={'flex'} justifyContent={'center'}>
+                <Typography className='backTop' onClick={() => {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }}>
+                    Back to top
+                </Typography>
+            </Box>
+            <Footer />
         </StyledEngineProvider>
      );
 }

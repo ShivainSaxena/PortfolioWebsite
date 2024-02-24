@@ -33,7 +33,8 @@ const Experience = () => {
                                 <h5 className="exdate">Sep 2018 - Present</h5>
                                 <p className='exdescription'>- Led weekly training sessions for 20+ cadets, covering diverse topics including aviation, survival, leadership, and discipline. <br /><br />
                                 - Organized large-scale squadron events, including fitness assessments, sports days, and field training exercises for over 200 cadets. <br /><br />
-                                - Actively supported fundraising initiatives and community engagement through events like poppy sales, food drives, and cash calendar sales, demonstrating commitment to the squadron's objectives.</p>
+                                - Actively supported fundraising initiatives and community engagement through events like poppy sales, food drives, and cash calendar sales, demonstrating commitment to the squadron's objectives. <br /><br />
+                                - Achieved notable milestones in personal development, participating in activities like biathlon, marksmanship, and various summer camps, culminating in selection for a glider scholarship training course in Manitoba and obtaining a glider student pilot permit along with a radio license.</p>
                             </div>
                         </motion.div>
                         <motion.div class="card"

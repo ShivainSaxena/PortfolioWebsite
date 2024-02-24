@@ -1,6 +1,12 @@
+import Footer from "./Footer";
+
+
 const Skills = () => {
     return ( 
-        <h1>akdjflakjflaskf</h1>
+        <div>
+            <h1>akdjflakjflaskf</h1>
+        </div>
+        
      );
 }
  
