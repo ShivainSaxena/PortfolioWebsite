@@ -3,6 +3,8 @@ import { Grid, Typography, Box } from '@mui/material';
 import '../App.css';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { motion } from "framer-motion";
+import Aboutsection from "./Aboutsection";
+
 
 const LandingPage = () => {
     return ( 
@@ -61,7 +63,12 @@ const LandingPage = () => {
                     <Grid item xs={10}>
                         <Box display={"flex"} justifyContent={"center"}>
                         <section className="arrowContainer">
-                            <a className='arrow' href="#about"><span></span></a>
+                            <div style={{cursor: 'pointer'}} onClick={() => {
+                                document.getElementById('about').scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start"
+                                    });
+                            }}><span></span></div>
                         </section>
                         
                         </Box>
@@ -70,6 +77,7 @@ const LandingPage = () => {
                 </Grid>
                 <Box flexGrow={1}></Box>
             </div>
+            <Aboutsection/>
         </StyledEngineProvider>
      );
 }

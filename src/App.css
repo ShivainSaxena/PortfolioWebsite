@@ -91,7 +91,7 @@ body .mainDesc{
   position: relative;
 }
 
-.arrowContainer a span {
+.arrowContainer div span {
   position: absolute;
   top: 0;
   left: 50%;
@@ -115,7 +115,7 @@ body .mainDesc{
 
 #aboutTitle{
   margin-bottom: 22px;
-  font-size: clamp(2.75rem, 7vw, 5.75rem);
+  font-size: clamp(2.75rem, 5vw, 5.75rem);
   background: linear-gradient(to bottom right, #5B7FFF, #33CCFC);
   -webkit-background-clip: text;
   background-clip: text;
@@ -125,7 +125,7 @@ body .mainDesc{
 #aboutBody{
   margin-top: 15px;
   line-height: 1.8;
-  font-size: clamp(1rem, 3vw, 2.25rem);
+  font-size: clamp(1rem, 2vw, 2.25rem);
 }
 
 
