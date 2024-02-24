@@ -4,6 +4,8 @@ import '../App.css';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { motion } from "framer-motion";
 import Aboutsection from "./Aboutsection";
+import Experience from './Experience';
+
 
 
 const LandingPage = () => {
@@ -78,6 +80,7 @@ const LandingPage = () => {
                 <Box flexGrow={1}></Box>
             </div>
             <Aboutsection/>
+            <Experience />
         </StyledEngineProvider>
      );
 }

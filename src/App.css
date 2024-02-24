@@ -3,6 +3,9 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 :root{
@@ -115,7 +118,7 @@ body .mainDesc{
 
 #aboutTitle{
   margin-bottom: 22px;
-  font-size: clamp(2.75rem, 5vw, 5.75rem);
+  font-size: clamp(2.75rem, 5vw, 5rem);
   background: linear-gradient(to bottom right, #5B7FFF, #33CCFC);
   -webkit-background-clip: text;
   background-clip: text;
@@ -127,6 +130,146 @@ body .mainDesc{
   line-height: 1.8;
   font-size: clamp(1rem, 2vw, 2.25rem);
 }
+
+.experienceHead{
+  font-size: clamp(2.75rem, 5vw, 5rem);
+  background: linear-gradient(to bottom right, #5B7FFF, #33CCFC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 10vh;
+}
+
+
+/* Timeline Container */
+.timeline {
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Card container */
+.card {
+  position: relative;
+  max-width: clamp(34.375rem, 2.404rem + 73.077vw, 93.75rem);
+}
+
+/* setting padding based on even or odd */
+.card:nth-child(odd) {
+  padding: 30px 0 30px 30px;
+}
+.card:nth-child(even) {
+  padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid #5B7FFF;
+}
+
+/* Setting the border of top, bottom, left */
+.card:nth-child(odd)::before {
+  left: 0px;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Setting the border of top, bottom, right */
+.card:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first card */
+.card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.card:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.card:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Information about the timeline */
+.info {
+  display: flex;
+  flex-direction: column;
+  background: #333;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Title of the card */
+.extitle {
+  color: #5B7FFF;
+  position: relative;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: clamp(2.4rem, 4vw , 4.8rem);
+}
+
+.explace{
+  color: rgb(194, 213, 255);
+  font-size: clamp(1.125rem, 3vw, 2.25rem);
+  font-weight: 400;
+  line-height: clamp(1.8rem, 5vw, 4rem);
+}
+
+.exdate{
+  color: rgb(220, 231, 255);
+  font-size: clamp(0.94rem, 2vw , 1.5rem);
+  font-weight: 400;
+  line-height: clamp(1.5rem, 5vw, 2.75rem);
+  margin-bottom: 15px;
+}
+
+.exdescription{
+  font-weight: 400;
+  color: white;
+  font-size: clamp(1rem, 1.5vw, 1.75rem);
+  line-height: clamp(1.6rem, 3vw, 3rem);
+}
+
+/* Timeline dot  */
+.extitle::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 999px;
+  border: 3px solid white;
+}
+
+/* text right if the card is even  */
+.card:nth-child(even) > .info > .extitle, .card:nth-child(even) > .info > .exdate, .card:nth-child(even) > .info > .explace {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card:nth-child(odd) > .info > .extitle::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card:nth-child(even) > .info > .extitle::before {
+  right: -45px;
+}
+
 
 
 
