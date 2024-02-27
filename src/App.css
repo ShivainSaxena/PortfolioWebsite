@@ -121,7 +121,7 @@ body .mainDesc{
 }
 
 #about{
-  scroll-margin-top: 100px;
+  scroll-margin-top: clamp(0rem, -4.464rem + 11.905vw, 6.25rem);
 }
 
 #aboutTitle{
@@ -387,6 +387,15 @@ body .mainDesc{
   opacity: 0.7;
   bottom: 20px;
   animation: animate 3s linear infinite;
+}
+
+.skillsHeader{
+  background: linear-gradient(to bottom right, #5B7FFF, #33CCFC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(2.5rem, 1.8rem + 1.867vw, 4.25rem);
+  margin: 25px 0;
 }
 
 @keyframes animateWaves {
