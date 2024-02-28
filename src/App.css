@@ -295,7 +295,7 @@ body .mainDesc{
   position: relative;
   background: #5B7FFF;
   min-height: 100px;
-  padding-block: 20px 50px;
+  padding-block: 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -345,7 +345,7 @@ body .mainDesc{
 
 .footer p {
   color: #fff;
-  margin: 15px 0 10px 0;
+  margin: 15px 0 5px 0;
   font-size: 1rem;
   font-weight: 300;
   text-align: center;
@@ -397,6 +397,17 @@ body .mainDesc{
   font-size: clamp(2.5rem, 1.8rem + 1.867vw, 4.25rem);
   margin: 25px 0;
 }
+
+.languageTitle{
+  font-size: clamp(1.75rem, 1.5rem + 1.25vw, 3rem);
+}
+
+.MuiChip-root{
+  font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
+  height: fit-content;
+}
+
+
 
 @keyframes animateWaves {
   0% {
