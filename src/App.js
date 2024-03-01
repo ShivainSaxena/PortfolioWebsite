@@ -3,6 +3,7 @@ import './App.css';
 import LandingPage from "./components/LandingPage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<LandingPage/>}/>
           <Route path='/skills' element={<Skills />}/>
+          <Route path="/projects" element={<Projects />} />
         </Routes>
       </Router>
 

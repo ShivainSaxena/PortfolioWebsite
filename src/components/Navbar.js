@@ -60,7 +60,7 @@ const Navbar = () => {
                                         </ListItemButton>
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemButton component={RouterLink} to="/projects">
+                                        <ListItemButton component={RouterLink} reloadDocument to="/projects">
                                         <ListItemText primary='Projects'/>
                                         </ListItemButton>
                                     </ListItem>
@@ -101,7 +101,7 @@ const Navbar = () => {
                                     Skills
                                 </Typography>
                                 </Link>
-                                <Link component={RouterLink} underline='none' to="/projects">
+                                <Link component={RouterLink} reloadDocument underline='none' to="/projects">
                                 <Typography variant='h5'>
                                     Projects
                                 </Typography>
