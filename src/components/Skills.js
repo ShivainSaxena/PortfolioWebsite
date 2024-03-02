@@ -8,11 +8,10 @@ import Skillstar from "../animations/Skillstar";
 const Skills = () => {
     return ( 
         <StyledEngineProvider injectFirst>
-            <Box display={"flex"} justifyContent={"center"}>
-               <Typography className="skillsHeader">
-                    My Skills 
-                </Typography> 
-            </Box>
+            <Typography className="skillsHeader">
+                My Skills 
+            </Typography> 
+
             <Grid container spacing={1} mb={'clamp(6.25rem, 5rem + 6.25vw, 12.5rem)'}>
                 <Grid item xs={12}>
                     <Box display={"flex"} flexDirection={{xs: 'column-reverse', lg: 'row'}} alignItems={{xs: "center", lg: 'flex-start '}}>
