@@ -13,7 +13,7 @@ const LandingPage = () => {
     return ( 
         <StyledEngineProvider injectFirst>
             <div className='firstScreen'>
-                <video src={Back} autoPlay muted loop className="backdrop"></video>
+                <video src={Back} autoPlay muted loop playsInline className="backdrop"></video>
                 <div className="overlay"></div>
                 <Grid container spacing={1}>
                     <Grid item xs={1}></Grid>

@@ -22,7 +22,7 @@ const Projects = () => {
                             Explore a showcase of my Arduino projects coded in C++ and displayed on a React website deployed through Netlify. The projects range from innovative gadgets to creative automation, where you will witness the intersection of technology and my creativity.
                         </p>
                         <Box display={'flex'} justifyContent={'space-between'}>
-                            <Tooltip title='React' placement='top' arrow>
+                            <Tooltip title='React' placement='top' arrow enterTouchDelay={0}>
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <g fill-rule="evenodd">
                                     <circle cx="11.996" cy="11.653" r="2.142"/>
@@ -30,7 +30,7 @@ const Projects = () => {
                                 </g>
                             </svg>
                             </Tooltip>
-                            <Tooltip title='HTML' placement='top' arrow>
+                            <Tooltip title='HTML' placement='top' arrow enterTouchDelay={0}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  >
                                 <g id="c133de6af664cd4f011a55de6b000d0b">
                                     <path display="inline" d="M108.669,0.501h23.032v22.756h21.069V0.501h23.034V69.41h-23.032V46.334h-21.069V69.41h-23.032V0.501
@@ -44,7 +44,7 @@ const Projects = () => {
                                 </g>
                             </svg>
                             </Tooltip>
-                            <Tooltip title='CSS' placement='top' arrow>
+                            <Tooltip title='CSS' placement='top' arrow enterTouchDelay={0}>
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enable-background="new 0 0 512 512" >
                                     <g id="c133de6af664cd4f011a55de6b001a2b">
                                         <path display="inline" d="M204.064,46.682v22.018h-56.302V0.501h56.302v24.13h-32.172v22.051H204.064z M261.941,24.631h22.492
@@ -59,7 +59,7 @@ const Projects = () => {
                                     </g>
                                 </svg>
                             </Tooltip>
-                            <Tooltip title='JavaScript' placement='top' arrow>
+                            <Tooltip title='JavaScript' placement='top' arrow enterTouchDelay={0}>
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
                                 <g id="5151e0c8492e5103c096af88a51e75c7">
                                     <path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M1.008,0.5C0.438,0.583,0.48,1.27,0.521,1.958
@@ -78,10 +78,10 @@ const Projects = () => {
                                 </g>
                             </svg>
                             </Tooltip>
-                            <Tooltip title='C++' placement='top' arrow>
+                            <Tooltip title='C++' placement='top' arrow enterTouchDelay={0}>
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.078 12A5.928 5.928 0 0 1 12 6.078a5.946 5.946 0 0 1 5.129 2.959l-1.499.867 5.027-2.902a1.579 1.579 0 0 0-.543-.575l-7.345-4.24c-.424-.245-1.116-.245-1.539 0l-7.345 4.24c-.422.244-.768.844-.768 1.333v8.48c0 .245.086.517.226.758l3.529-2.038A5.883 5.883 0 0 1 6.078 12z"/><path d="M14.564 10.519A2.971 2.971 0 0 0 12 9.039a2.964 2.964 0 0 0-2.564 4.441L12 12l2.564-1.481z"/><path d="m20.657 7.002-5.046 2.913-1.046.605-.001-.001L12 12l-2.563 1.48A2.964 2.964 0 0 0 12 14.961a2.97 2.97 0 0 0 2.565-1.481l2.563 1.483a5.944 5.944 0 0 1-5.129 2.959 5.926 5.926 0 0 1-5.128-2.962l-3.529 2.038c.14.242.332.453.543.575l7.345 4.24c.423.245 1.115.245 1.539 0l7.345-4.24c.211-.122.403-.333.543-.575.14-.241.226-.513.226-.758V7.76c0-.245-.086-.517-.226-.758zm-2.735 5.327h-.658v.658h-.657v-.658h-.658v-.658h.658v-.658h.657v.658h.658v.658zm2.468 0h-.658v.658h-.658v-.658h-.657v-.658h.657v-.658h.658v.658h.658v.658z"/></svg>
                             </Tooltip>
-                            <Tooltip title='Netlify' placement='top' arrow>
+                            <Tooltip title='Netlify' placement='top' arrow enterTouchDelay={0}>
                                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M22.579 11.36c0.151 0.077 0.291 0.181 0.405 0.307l3.131-1.396-2.921-2.896-0.657 3.943zM16.079 8.729c0.156 0.229 0.249 0.489 0.281 0.765l4.661 1.975c0.14-0.109 0.301-0.188 0.473-0.235l0.765-4.735-2.839-2.979-3.343 5.135zM31.989 16.047l-4.995-4.995-3.401 1.391 8.355 3.552c0 0 0.073 0.052 0.041 0.052zM31.156 16.86l-8.020-3.428c-0.224 0.297-0.563 0.495-0.933 0.541l-0.859 5.277c0.255 0.26 0.401 0.609 0.401 0.973l4.843 1.016 4.443-4.412v-0.083zM20.531 12.333l-4.353-1.855c-0.308 0.469-0.833 0.745-1.391 0.724h-0.265l-3.609 5.568 9.635-4.172v0.011c-0.005-0.073-0.005-0.145 0-0.224 0.005-0.016 0-0.036-0.016-0.052zM25.823 22.079l-4.26-0.881c-0.161 0.209-0.369 0.365-0.615 0.459l-1.016 6.297 5.917-5.865c0 0-0.011 0.032-0.027 0.032zM19.864 21.645c-0.411-0.167-0.713-0.52-0.823-0.948l-7.932-1.629-0.115 0.183 7.199 10.411 0.432-0.427 1.224-7.563c0 0 0.041 0.031 0.015 0.016zM11.276 18.109l7.839 1.615c0.229-0.401 0.64-0.661 1.099-0.697l0.849-5.188-0.183-0.156-9.744 4.177c0.052 0.077 0.099 0.161 0.14 0.249zM7.989 19.416l-0.167-0.165-3.38 1.389 1.64 1.631 1.865-2.896zM10.219 19.948c-0.235 0.109-0.495 0.161-0.749 0.167-0.209 0-0.407-0.032-0.605-0.099l-2.057 2.995 9.021 8.937 1.588-1.579zM8.953 16.427c0.135-0.015 0.276-0.015 0.416 0 0.152-0.020 0.308-0.020 0.459 0l3.645-5.667c-0.285-0.296-0.443-0.692-0.443-1.099-0.015-0.12-0.015-0.245 0-0.364l-4.427-2.047-3.563 3.468zM9.355 6.557l4.317 1.839c0.312-0.26 0.708-0.396 1.115-0.38 0.177 0.005 0.353 0.031 0.525 0.083l3.371-5.26-2.787-2.787-6.541 6.421c0 0-0.011 0.068 0 0.084zM7.74 17.443c0.088-0.161 0.197-0.312 0.323-0.448l-3.693-5.511-4.369 4.245zM7.391 18.375l-6.683-1.396 2.937 2.98 3.704-1.573z"/>
                                 </svg> 
