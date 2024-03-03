@@ -429,7 +429,7 @@ body .mainDesc{
   position: relative;
   border-radius: 50px;
 }
-.project video{
+.project img{
   width: clamp(19.75rem, 11.682rem + 40.341vw, 37.5rem);
   border-radius: 50px;
   transition: all .5s cubic-bezier(.8,.5,.2,1.4);
@@ -457,11 +457,7 @@ body .mainDesc{
   box-shadow: 0px 2px 3px rgba(0,0,0,.3);
   transform: scale(.97);
 }
-.project:hover img{
-  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
-  transform: scale(1.6) rotate(20deg);
-  filter: blur(3px);
-}
+
 .project h1{
   color: #5B7FFF;
   font-weight: 500;

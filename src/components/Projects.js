@@ -1,6 +1,6 @@
 import '../App.css';
-import Arduino from '../assets/arduinoProject.mp4';
-import Soon from  '../assets/comingsoon.mp4';
+import Arduino from '../assets/arduinoProject.gif';
+import Soon from  '../assets/comingsoon.gif';
 import { Typography, Box, Tooltip } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import Footer from './Footer';
@@ -15,10 +15,7 @@ const Projects = () => {
             </Typography>
             <div class="wrapper">
                 <div class="project">
-                    <div dangerouslySetInnerHTML={{
-                        __html: `<video src=${Arduino} autoPlay muted='true' loop></video>`
-                    }}
-                    />
+                    <img src={Arduino} alt="arduino.gif" />
                     <div class="descriptions">
                         <h1>Arduino Projects Website</h1>
                         <p>
@@ -95,7 +92,7 @@ const Projects = () => {
                     </div>
                 </div>
                 <div class="project">
-                    <video id='soon' src={Soon} autoPlay muted loop ></video>
+                    <img src={Soon} alt="soon.gif" />
                 </div>
             </div>
             <Box className='projectFooter'>
