@@ -15,7 +15,10 @@ const Projects = () => {
             </Typography>
             <div class="wrapper">
                 <div class="project">
-                    <video src={Arduino} autoPlay muted='true' loop></video>
+                    <div dangerouslySetInnerHTML={{
+                        __html: `<video src=${Arduino} autoPlay muted='true' loop></video>`
+                    }}
+                    />
                     <div class="descriptions">
                         <h1>Arduino Projects Website</h1>
                         <p>
