@@ -1,6 +1,8 @@
 import '../App.css';
-import Arduino from '../assets/arduinoProject.gif';
-import Soon from  '../assets/comingsoon.gif';
+import ArduinoMP4 from '../assets/arduinoProject.mp4';
+import ArduinoWeb from '../assets/arduinoProject.webm';
+import SoonMP4 from  '../assets/comingsoon.mp4';
+import SoonWeb from '../assets/comingsoon.webm';
 import { Typography, Box, Tooltip } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import Footer from './Footer';
@@ -15,7 +17,10 @@ const Projects = () => {
             </Typography>
             <div class="wrapper">
                 <div class="project">
-                    <img src={Arduino} alt="arduino.gif" />
+                    <video autoPlay loop muted playsInline>
+                        <source src={ArduinoWeb} type='video/webm'/>
+                        <source src={ArduinoMP4} type='video/mp4'/>
+                    </video>
                     <div class="descriptions">
                         <h1>Arduino Projects Website</h1>
                         <p>
@@ -92,7 +97,10 @@ const Projects = () => {
                     </div>
                 </div>
                 <div class="project">
-                    <img src={Soon} alt="soon.gif" />
+                    <video autoPlay loop muted playsInline>
+                        <source src={SoonWeb} type='video/webm'/>
+                        <source src={SoonMP4} type='video/mp4'/>
+                    </video>
                 </div>
             </div>
             <Box className='projectFooter'>

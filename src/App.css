@@ -429,8 +429,9 @@ body .mainDesc{
   position: relative;
   border-radius: 50px;
 }
-.project img{
+.project video{
   width: clamp(19.75rem, 11.682rem + 40.341vw, 37.5rem);
+  height: clamp(19.75rem, 11.682rem + 40.341vw, 37.5rem);
   border-radius: 50px;
   transition: all .5s cubic-bezier(.8,.5,.2,1.4);
 }

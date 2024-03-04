@@ -1,4 +1,5 @@
-import Back from '../assets/heroback.mp4';
+import BackMP4 from '../assets/heroback.mp4';
+import BackWeb from '../assets/heroback.webm';
 import { Grid, Typography, Box } from '@mui/material';
 import '../App.css';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -13,7 +14,10 @@ const LandingPage = () => {
     return ( 
         <StyledEngineProvider injectFirst>
             <div className='firstScreen'>
-                <video src={Back} autoPlay muted loop playsInline className="backdrop"></video>
+                <video autoPlay muted loop playsInline className="backdrop">
+                    <source src={BackWeb} type='video/webm'/>
+                    <source src={BackMP4} type='video/mp4'/>
+                </video>
                 <div className="overlay"></div>
                 <Grid container spacing={1}>
                     <Grid item xs={1}></Grid>

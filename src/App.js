@@ -1,24 +1,27 @@
 import Navbar from "./components/Navbar";
 import './App.css';
-import LandingPage from "./components/LandingPage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
+import React, {Suspense} from "react";
+import Loader from './animations/Loader';
 
-
+const LandingPage = React.lazy(() => import("./components/LandingPage"));
+const Skills = React.lazy(() => import("./components/Skills"));
+const Projects = React.lazy(() => import("./components/Projects"));
 
 function App() {
 
   return (
     <div className="App">
-      <Navbar/> 
-      <Router>
-        <Routes>
-          <Route exact path='/' element={<LandingPage/>}/>
-          <Route path='/skills' element={<Skills />}/>
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </Router>
+      <Suspense fallback={<Loader />}>
+        <Navbar/> 
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<LandingPage />}/>
+            <Route path='/skills' element={<Skills />}/>
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </Router>
+      </Suspense>
 
       
       
