@@ -65,7 +65,7 @@ const Navbar = () => {
                                         </ListItemButton>
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemButton component={RouterLink} to="/contact">
+                                        <ListItemButton component={RouterLink} reloadDocument to="/contact">
                                         <ListItemText primary='Contact'/>
                                         </ListItemButton>
                                     </ListItem>
@@ -106,7 +106,7 @@ const Navbar = () => {
                                     Projects
                                 </Typography>
                                 </Link>
-                                <Link component={RouterLink} underline='none' to="/contact">
+                                <Link component={RouterLink} reloadDocument underline='none' to="/contact">
                                 <Typography variant='h5'>
                                     Contact
                                 </Typography>

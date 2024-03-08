@@ -5,6 +5,13 @@ import '../App.css';
 import Skillstar from "../animations/Skillstar";
 
 
+/*
+ TODO: 
+    - Add an animation for the first time the user enters the skills section of the page
+    This animation will start off the Skills header centered as usual and then the skill star will fade in shortly after and and then it will slide off to the side and then the languages and frameworks will fade in afterwards
+    - Only implement this animation for large screen size leaving the mobile expereience as it is 
+*/
+
 const Skills = () => {
     return ( 
         <StyledEngineProvider injectFirst>

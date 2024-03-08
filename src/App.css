@@ -12,6 +12,7 @@
   --back: rgb(20 26 31);
   --light: #33CCFC;
   --dark: #5B7FFF;
+  --btn-size: 90px;
 }
 
 html{
@@ -400,6 +401,14 @@ body .mainDesc{
   margin: 25px 0;
   text-align: center;
 }
+.contactHeader{
+  background: linear-gradient(to bottom right, #5B7FFF, #33CCFC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(2.5rem, 1.8rem + 1.867vw, 4.25rem);
+  margin: 25px 0;
+}
 
 .languageTitle{
   font-size: clamp(1.75rem, 1.5rem + 1.25vw, 3rem);
@@ -483,7 +492,7 @@ svg{
   fill: #5B7FFF;
 }
 
-.project button {
+.project button, .contactContent button {
   align-items: center;
   appearance: none;
   background-image: radial-gradient(100% 100% at 100% 0, var(--light) 0, var(--dark) 100%);
@@ -510,20 +519,26 @@ svg{
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow,transform;
+}
+.contactContent button{
+  font-size: 1.563rem;
+}
+
+.project button {
   font-size: clamp(1.125rem, 0.926rem + 0.994vw, 1.563rem);
   margin-top: clamp(0.813rem, 0.33rem + 2.415vw, 1.875rem);
 }
 
-.project button:focus {
+.project button:focus, .contactContent button:focus {
   box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
-.project button:hover {
+.project button:hover, .contactContent button:hover {
   box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
-.project button:active {
+.project button:active, .contactContent button:active {
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
@@ -536,7 +551,189 @@ svg{
   margin-top: clamp(13.438rem, 13rem + 2.188vw, 15.625rem);
 }
 
+.globe video{
+  width: clamp(28.125rem, -8.333rem + 48.611vw, 50rem);
+  z-index: -1;
+  border-radius: 20%;
+}
 
+.globe{
+  position: relative;
+  margin: 50px;
+  width: fit-content;
+}
+
+.shadow:nth-child(2){
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    ellipse farthest-side at 50% 50%,
+    transparent 92%,
+    rgba(20, 26, 31, 1) 100%
+  );
+}
+
+input, textarea{
+  background-color: transparent;
+  border: 2px solid grey;
+  padding: 16.5px;
+  font-size: clamp(1.25rem, 0rem + 1.667vw, 2rem);
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  resize: none;
+}
+
+input:focus, textarea:focus {
+  background: linear-gradient(var(--back), var(--back)) padding-box,
+  linear-gradient(to bottom right, #5B7FFF, #33CCFC) border-box;
+  border: 2px solid transparent;
+  outline: none;
+}
+
+.inputLabelGroup{
+  position: relative;
+  margin-bottom: clamp(1.875rem, 0.833rem + 1.389vw, 2.5rem);
+}
+
+.floatingLabel {
+  font-size: clamp(1.25rem, 0rem + 1.667vw, 2rem);
+  color: grey;
+  position: absolute;
+  pointer-events: none;
+  top: 15px;
+  left: 15px;
+  transition: all 0.1s ease;
+}
+
+.inputLabelGroup input:focus ~ .floatingLabel,
+.inputLabelGroup input:not(:focus):valid ~ .floatingLabel,
+.inputLabelGroup textarea:focus ~ .floatingLabel,
+.inputLabelGroup textarea:not(:focus):valid ~ .floatingLabel {
+  top: -15px;
+  bottom: 0px;
+  left: 10px;
+  font-size: clamp(1.25rem, 0.833rem + 0.556vw, 1.5rem);
+  opacity: 1;
+  color: var(--dark);
+  height: fit-content;
+  padding: 0 10px;
+  background-color: var(--back);
+}
+
+.message{
+  height: 100px;
+}
+
+.contactContent{
+  flex-grow: 1;
+  padding-right: clamp(2.188rem, -4.583rem + 9.028vw, 6.25rem);
+  padding-left: clamp(2.188rem, -4.583rem + 9.028vw, 6.25rem);
+}
+
+.social-btns{
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+.social-btns li{
+  width: 80px;
+  height: 80px;
+  line-height: 60px;
+  border-radius: 12px;
+  position: relative;
+  transition: all .5s;
+  overflow: hidden;
+  color: var(--clr);
+  box-shadow: 0px 8px 16px -6px, 0px 0px 16px -6px;
+}
+
+.social-btns a {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s;
+  animation: icon-out .5s forwards;
+  animation-timing-function: cubic-bezier(0.5, -0.6, 1, 1);
+}
+
+.social-btns svg{
+  width: 40px;
+  height: 40px;
+}
+
+.social-btns g, .social-btns svg{
+  fill: var(--clr);
+  transition: all 1s ease-out;
+}
+
+.social-btns polyline, .social-btns rect{
+  stroke: #DD4235;
+  transition: all 1s ease-out;
+
+}
+
+.social-btns a:hover g, .social-btns a:hover svg{
+  fill: white;
+}
+
+.social-btns a:hover rect, .social-btns a:hover polyline{
+  stroke: white;
+}
+
+.social-btns li:before{
+  content: '';
+  width: 110px;
+  height: 110px;
+  display: block;
+  position: absolute;
+  transform: rotate(-45deg) translate(-110%, -23px);
+  z-index: -1;
+  animation: back-out .5s forwards;
+  animation-timing-function: cubic-bezier(0.5, -0.6, 1, 1);
+  background: var(--clr);
+}
+
+.social-btns li:hover .social-btns a{
+  animation: icon-in .5s forwards;
+  animation-timing-function: cubic-bezier(0, 0, 0.4, 1.6);
+}
+
+.social-btns li:hover:before{
+  animation: back-in .5s forwards;
+  animation-timing-function: cubic-bezier(0, 0, 0.4, 1.6);
+}
+
+@keyframes back-in {
+  0%{
+    transform: rotate(-45deg) translate(-110%, -23px);
+  }
+  80%{
+    transform: rotate(-45deg) translate(5%, -23px);
+  }
+  100%{
+    transform: rotate(-45deg) translate(0%, -23px);
+  }
+}
+
+@keyframes back-out {
+  0%{
+    transform: rotate(-45deg) translate(0%, -23px);
+  }
+  20%{
+    transform: rotate(-45deg) translate(5%, -23px);
+  }
+  100%{
+    transform: rotate(-45deg) translate(-120%, -23px);
+  }
+}
 
 @keyframes animateWaves {
   0% {
@@ -552,7 +749,7 @@ svg{
     background-position-x: -1000px;
   }
   100% {
-    background-positon-x: 0px;
+    background-position-x: 0px;
   }
 }
 
@@ -583,6 +780,29 @@ svg{
   .logo{
     width: 80px;
     height: 80px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .globe video{
+    width: clamp(15.938rem, 11.506rem + 22.159vw, 28.125rem);
+  }
+
+  .contactHeader{
+    margin-top: clamp(0rem, -0.568rem + 2.841vw, 1.563rem);
+    font-size: clamp(2.25rem, 1.614rem + 3.182vw, 4rem);
+    text-align: center;
+  }
+
+  .contactContent{
+    --padding: clamp(0.625rem, 0.057rem + 2.841vw, 2.188rem);
+    padding-right: var(--padding);
+    padding-left: var(--padding);
+  }
+
+  .social-btns{
+    gap: clamp(1.813rem, 1.335rem + 2.386vw, 3.125rem);
+    margin-bottom: 30px;
   }
 }
 
