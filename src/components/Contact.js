@@ -1,46 +1,127 @@
-/*
-    TODO:
-        - For the animation for this page what will happen is when the user first enters the page the roatating globe will fade in the screen at the center and then shortly after it will slide of to the LEFT and then the text stating something like ('Get In Touch') will fade in at the top RIGHT and then the contact form will fade in under it
-
-*/
+import { useEffect, useState } from 'react';
 import { Typography, Box} from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import '../App.css';
 import GlobeMP4 from '../assets/globe3.mp4';
 import GlobeWeb from '../assets/globe3.webm';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
+    const [shift, setShift] = useState(null); 
+    const [stillNeedsToRun] = useState(JSON.parse(sessionStorage.getItem('myBooleanKey')));
+    
+    setTimeout(() => {
+        sessionStorage.setItem('myBooleanKey', JSON.stringify(true));
+    }, 2000);
+
+    useEffect(() => {
+        const globeWidth = (-8.333*16) + ((48.611 / 100) * window.innerWidth);
+        let shift = (window.innerWidth / 2) - (globeWidth / 1.75);
+        setShift(shift);
+    }, [])
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+      });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async () => {
+        try {
+          const response = await fetch('/.netlify/functions/submitForm', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+          });
+    
+          if (response.ok) {
+            console.log('Email sent successfully');
+            // Optionally, reset the form or show a success message
+          } else {
+            console.error('Error sending email');
+            // Handle error, show an error message, etc.
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    
     return ( 
         <StyledEngineProvider injectFirst>
             <Box display={'flex'} flexDirection={{xs: 'column', lg: 'row'}}>
                 <Box alignSelf={'center'}>
-                    <div className='globe'>
+                    <motion.div 
+                    viewport={{once: true}}
+                    transition={{
+                        duration: 4,
+                        ease: 'easeInOut',
+                    }}
+                    animate={!stillNeedsToRun && window.innerWidth > 1200 ? {
+                        opacity: [0, 1, 1],
+                        x: [shift, shift, 0]
+                    } : {opacity: 1}}   
+                    className='globe'>
                         <video autoPlay muted playsInline loop>
                             <source src={GlobeWeb} type='video/webm'/>
                             <source src={GlobeMP4} type='video/mp4'/>
                         </video>
                         <div className="shadow"></div>
-                    </div>
+                    </motion.div>
                 </Box>
                 <Box className='contactContent'>
-                    <Typography className='contactHeader'>
+                    <Typography 
+                    className='contactHeader'
+                    component={motion.p}
+                    animate={!stillNeedsToRun && window.innerWidth > 1200 ? {
+                        opacity: [0, 1]
+                    }: {opacity: 1}}
+                    transition={{
+                        duration: 1.4,
+                        ease: 'easeInOut',
+                        delay: 2.9
+                    }}>
                         Get In Touch!
                     </Typography>
-                    <div className="inputLabelGroup">
-                        <input type="text" required/>
-                        <label className='floatingLabel'>Name</label>
-                    </div>
-                    <div className="inputLabelGroup">
-                        <input type="type" required/>
-                        <label className='floatingLabel'>Email</label>
-                    </div>
-                    <div className="inputLabelGroup">
-                        <textarea required rows={5}></textarea>
-                        <label className='floatingLabel'>Message</label>
-                    </div>
-                    <button>Send</button>
+                    <motion.div
+                    animate={ !stillNeedsToRun && window.innerWidth > 1200 ? {
+                        opacity: [0, 1],
+                        y: [-30, 0]
+                    }: {opacity: 1, y: 0}}
+                    transition={{
+                        duration: 1.4,
+                        ease: 'easeInOut',
+                        delay: 3
+                    }}>
+                        <div className="inputLabelGroup">
+                            <input type="text" name='name' required onChange={handleChange} value={formData.name}/>
+                            <label className='floatingLabel'>Name</label>
+                        </div>
+                        <div className="inputLabelGroup">
+                            <input type="type" name='email' required onChange={handleChange} value={formData.email}/>
+                            <label className='floatingLabel'>Email</label>
+                        </div>
+                        <div className="inputLabelGroup">
+                            <textarea required name='message'  rows={5} onChange={handleChange} value={formData.message}></textarea>
+                            <label className='floatingLabel'>Message</label>
+                        </div>
+                        <button onClick={handleSubmit}>Send</button>
+                    </motion.div>
+                    
                     <Box mt={5}>
-                        <ul className="social-btns">
+                        <motion.ul className="social-btns"
+                        animate={ !stillNeedsToRun && window.innerWidth > 1200 ? {
+                            opacity: [0, 1],
+                            x: [-30 , 0]
+                        }: {opacity: 1, x: 0}}
+                        transition={{
+                            duration: 1.4,
+                            ease: 'easeInOut',
+                            delay: 3.1
+                        }}
+                        >
                             <li style={{'--clr': '#0A66C2'}}>
                                 <a href="http://www.linkedin.com/in/shivain-saxena" target='_blank' rel="norefferer">
                                     <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +164,7 @@ const Contact = () => {
                                     </svg>
                                 </a>
                             </li>
-                        </ul>
+                        </motion.ul>
                     </Box>
 
                 </Box>
