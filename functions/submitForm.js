@@ -5,21 +5,20 @@ exports.handler = async (event) => {
   const { name, email, message } = JSON.parse(event.body);
 
   // Retrieve email and password from environment variables
-  const userEmail = process.env.USER_EMAIL;
-  const userPassword = process.env.USER_PASSWORD;
+
 
   // Set up nodemailer to send email
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: userEmail,
-      pass: userPassword,
+      user: "shivainsaxena@gmail.com",
+      pass: "mnkw dlay wtpq yjma",
     },
   });
 
   const mailOptions = {
     from: email,
-    to: userEmail,
+    to: "shivainsaxena@gmail.com",
     subject: 'New Portfolio Contact Form Submission',
     text: `From: ${name},\n\n${message}`
   };
