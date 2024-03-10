@@ -3,6 +3,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import MailIcon from '@mui/icons-material/Mail';
 
+// Footer component animated waves and nav links
+
 const Footer = () => {
     return ( 
         <footer class="footer">

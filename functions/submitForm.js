@@ -1,4 +1,4 @@
-// submitForm.js
+// Create serverless function to handle emails sent to personal Gmail with netlify functions
 const nodemailer = require('nodemailer');
 
 exports.handler = async (event) => {
@@ -13,6 +13,7 @@ exports.handler = async (event) => {
     },
   });
 
+  // Format email
   const mailOptions = {
     from: email,
     to: "shivainsaxena@gmail.com",

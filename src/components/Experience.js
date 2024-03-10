@@ -3,6 +3,7 @@ import { Typography, Box } from '@mui/material';
 import '../App.css';
 import { motion } from "framer-motion";
 
+// Experience timeline component with responsive typography and sizing
 
 const Experience = () => {
     return ( 

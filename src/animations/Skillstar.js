@@ -5,6 +5,8 @@ import Javascript from '../assets/javascriptelectron1.png';
 import CSS from '../assets/csselectron.png';
 import HTML from '../assets/htmlelectron.png';
 
+// Star/Atom component in skills page 
+
 const Skillstar = () => {
     return ( 
         <div id="atom">

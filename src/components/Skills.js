@@ -6,19 +6,26 @@ import Skillstar from "../animations/Skillstar";
 import { motion } from 'framer-motion';
 import { useState, useEffect } from "react";
 
+// Component to display skills page 
+
 const Skills = () => {
+    // Variable for animation shift value
     const [shift, setShift] = useState(null);
+
+    // Store whether star animation has ran in session storage to stay consistent throughout user experience
     const [starAnim] = useState(JSON.parse(sessionStorage.getItem('starAnim')));
 
     setTimeout(() => {
         sessionStorage.setItem('starAnim', JSON.stringify(true));
     }, 2000);
 
+    // Calculate shift value every time compoennt mounts
     useEffect(() => {
         const star = (10.417*16) + ((27.778 / 100) * window.innerWidth);
         let shift = (window.innerWidth / 2) - (star / 1.55);
         setShift(shift);
     }, [])
+
     return ( 
         <StyledEngineProvider injectFirst>
             <Typography className="skillsHeader">

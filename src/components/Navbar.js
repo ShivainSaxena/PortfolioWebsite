@@ -6,8 +6,13 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Link as RouterLink } from 'react-router-dom';
 import { StyledEngineProvider } from '@mui/material/styles';
 
+// Responsive Navigation bar component 
+
 const Navbar = () => {
+    // State variable to track if menu is open or not
     const [open, setOpen] = useState(false);
+
+    // Functions to run when menu is opened or closed or a link is clicked
     const handleClose = () => setOpen(false);
     const handleClick = () => {
         if (window.location.pathname === '/'){

@@ -8,7 +8,7 @@ import Aboutsection from "./Aboutsection";
 import Experience from './Experience';
 import Footer from './Footer';
 
-
+// Main landing page component with video background and text animations
 
 const LandingPage = () => {
     return ( 

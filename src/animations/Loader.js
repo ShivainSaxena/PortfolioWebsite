@@ -1,5 +1,7 @@
 import styles from './loader.module.css';
 
+// Loading animation for suspense fallback as styled component
+
 const Loader = () => {
     return ( 
         <div style={{

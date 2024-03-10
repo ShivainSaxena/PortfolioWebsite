@@ -7,7 +7,7 @@ import { Typography, Box, Tooltip } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import Footer from './Footer';
 
-
+// Component for projects page
 
 const Projects = () => {
     return ( 

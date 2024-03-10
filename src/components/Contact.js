@@ -6,46 +6,55 @@ import GlobeMP4 from '../assets/globe3.mp4';
 import GlobeWeb from '../assets/globe3.webm';
 import { motion } from 'framer-motion';
 
+// Contact page with animated globe and email form w/ form validation
+
 const Contact = () => {
+    // Shift value for globe animation
     const [shift, setShift] = useState(null); 
+
+    // Session stored boolean to ensure animation only runs once for the user's time on the website
     const [stillNeedsToRun] = useState(JSON.parse(sessionStorage.getItem('myBooleanKey')));
+
+    // State variable to control which toast to show depending on user input in form
     const [toast, setToast] = useState(0);
     
     setTimeout(() => {
         sessionStorage.setItem('myBooleanKey', JSON.stringify(true));
     }, 2000);
 
+    // Calculate shift value for animation every time component mounts
     useEffect(() => {
         const globeWidth = (-8.333*16) + ((48.611 / 100) * window.innerWidth);
         let shift = (window.innerWidth / 2) - (globeWidth / 1.75);
         setShift(shift);
     }, [])
 
+    // State to hold form data as object
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: '',
-      });
+    });
 
+    // Continuously update state variable as form input is changed
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    // Handle toast when it is closed or duration ends
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
           return;
         }
-    
         setToast(0);
-      };
+    };
 
+    // Function to run when user submits email form and display according toast for form validation
     const handleSubmit = async () => {
-
         if (!formData.name || !formData.email || !formData.message || formData.email.indexOf('@') === -1) {
             setToast(3);
             return;
           }
-
         try {
           const response = await fetch('/.netlify/functions/submitForm', {
             method: 'POST',
@@ -66,7 +75,6 @@ const Contact = () => {
                 message: '',
             });
             setToast(2);
-            
           }
         } catch (error) {
           console.error(error);
@@ -190,7 +198,6 @@ const Contact = () => {
                             </li>
                         </motion.ul>
                     </Box>
-
                 </Box>
             </Box>
             <Snackbar open={toast === 1} autoHideDuration={6000} anchorOrigin={{vertical: 'top', horizontal: 'center'}} onClose={handleClose}>
@@ -209,7 +216,7 @@ const Contact = () => {
                 Error sending email!
                 </Alert>
             </Snackbar>
-            <Snackbar open={toast === 3} autoHideDuration={10000} anchorOrigin={{vertical: 'top', horizontal: 'center'}} onClose={handleClose}>
+            <Snackbar open={toast === 3} autoHideDuration={7000} anchorOrigin={{vertical: 'top', horizontal: 'center'}} onClose={handleClose}>
                 <Alert
                 severity="warning"
                 variant="filled"
@@ -217,7 +224,6 @@ const Contact = () => {
                 Please fill out all fields! (Email MUST contain '@')
                 </Alert>
             </Snackbar>
-
         </StyledEngineProvider>
      );
 }

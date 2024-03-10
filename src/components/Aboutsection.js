@@ -3,13 +3,13 @@ import About from "../assets/about.png";
 import { StyledEngineProvider } from '@mui/material/styles';
 import { motion } from "framer-motion";
 
+// About component for main page under landing section
 
 const Aboutsection = () => {
     return ( 
         <StyledEngineProvider>
             <Grid container spacing={1} id='about'>
                 <Grid item xs={1}>
-
                 </Grid>
                 <Grid item xs={10}>
                     <Box display={{xs: "flex", sm: "none"}} flexDirection={'column'} alignItems={"center"}>
