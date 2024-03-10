@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Typography, Box} from '@mui/material';
+import { Typography, Box, Alert, Snackbar} from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import '../App.css';
 import GlobeMP4 from '../assets/globe3.mp4';
@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 const Contact = () => {
     const [shift, setShift] = useState(null); 
     const [stillNeedsToRun] = useState(JSON.parse(sessionStorage.getItem('myBooleanKey')));
+    const [toast, setToast] = useState(0);
     
     setTimeout(() => {
         sessionStorage.setItem('myBooleanKey', JSON.stringify(true));
@@ -30,7 +31,21 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setToast(0);
+      };
+
     const handleSubmit = async () => {
+
+        if (!formData.name || !formData.email || !formData.message || formData.email.indexOf('@') === -1) {
+            setToast(3);
+            return;
+          }
+
         try {
           const response = await fetch('/.netlify/functions/submitForm', {
             method: 'POST',
@@ -38,11 +53,20 @@ const Contact = () => {
           });
     
           if (response.ok) {
-            console.log('Email sent successfully');
-            // Optionally, reset the form or show a success message
+            setFormData({
+                name: '',
+                email: '',
+                message: '',
+            });
+            setToast(1);
           } else {
-            console.error('Error sending email');
-            // Handle error, show an error message, etc.
+            setFormData({
+                name: '',
+                email: '',
+                message: '',
+            });
+            setToast(2);
+            
           }
         } catch (error) {
           console.error(error);
@@ -169,6 +193,30 @@ const Contact = () => {
 
                 </Box>
             </Box>
+            <Snackbar open={toast === 1} autoHideDuration={6000} anchorOrigin={{vertical: 'top', horizontal: 'center'}} onClose={handleClose}>
+                <Alert
+                severity="success"
+                variant="filled"
+                >
+                Email sent succesfully!
+                </Alert>
+            </Snackbar>
+            <Snackbar open={toast === 2} autoHideDuration={6000} anchorOrigin={{vertical: 'top', horizontal: 'center'}} onClose={handleClose}>
+                <Alert
+                severity="error"
+                variant="filled"
+                >
+                Error sending email!
+                </Alert>
+            </Snackbar>
+            <Snackbar open={toast === 3} autoHideDuration={10000} anchorOrigin={{vertical: 'top', horizontal: 'center'}} onClose={handleClose}>
+                <Alert
+                severity="warning"
+                variant="filled"
+                >
+                Please fill out all fields! (Email MUST contain '@')
+                </Alert>
+            </Snackbar>
 
         </StyledEngineProvider>
      );
