@@ -711,6 +711,21 @@ input:focus, textarea:focus {
   animation-timing-function: cubic-bezier(0, 0, 0.4, 1.6);
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar {
+  border-radius: 8px;
+  background-color: #95a5a6;
+  border: 1px solid #cacaca;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #2c3e50;
+}
+
 @keyframes back-in {
   0%{
     transform: rotate(-45deg) translate(-110%, -23px);
