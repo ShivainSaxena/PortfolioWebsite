@@ -3,16 +3,22 @@ import { Grid, Typography, Box, Chip } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import '../App.css';
 import Skillstar from "../animations/Skillstar";
-
-
-/*
- TODO: 
-    - Add an animation for the first time the user enters the skills section of the page
-    This animation will start off the Skills header centered as usual and then the skill star will fade in shortly after and and then it will slide off to the side and then the languages and frameworks will fade in afterwards
-    - Only implement this animation for large screen size leaving the mobile expereience as it is 
-*/
+import { motion } from 'framer-motion';
+import { useState, useEffect } from "react";
 
 const Skills = () => {
+    const [shift, setShift] = useState(null);
+    const [starAnim] = useState(JSON.parse(sessionStorage.getItem('starAnim')));
+
+    setTimeout(() => {
+        sessionStorage.setItem('starAnim', JSON.stringify(true));
+    }, 2000);
+
+    useEffect(() => {
+        const star = (10.417*16) + ((27.778 / 100) * window.innerWidth);
+        let shift = (window.innerWidth / 2) - (star / 1.55);
+        setShift(shift);
+    }, [])
     return ( 
         <StyledEngineProvider injectFirst>
             <Typography className="skillsHeader">
@@ -23,45 +29,77 @@ const Skills = () => {
                 <Grid item xs={12}>
                     <Box display={"flex"} flexDirection={{xs: 'column-reverse', lg: 'row'}} alignItems={{xs: "center", lg: 'flex-start '}}>
                         <Box display={"flex"} flexDirection={'column'} flexGrow={1} marginLeft={{xs: 0, lg: 'clamp(3.125rem, -5.208rem + 11.111vw, 8.125rem)'}} my={10} alignItems={{xs: 'center', lg: 'flex-start'}}>
-                            <Typography className="languageTitle" >
-                                Languages
-                            </Typography>
-                            <Box display={"flex"} gap={4} flexWrap={'wrap'} padding={5} justifyContent={{xs: 'center', lg: 'flex-start'}}>
-                                <Chip
-                                label="Python"
-                                color="info"/>
-                                <Chip
-                                label="JavaScript"
-                                color="info"/>
-                                <Chip
-                                label="HTML"
-                                color="info"/>
-                                <Chip
-                                label="CSS"
-                                color="info"/>
-                                <Chip
-                                label="C++"
-                                color="info"/>
-                            </Box>
-                            <Typography className="languageTitle" mt={'clamp(1.563rem, 0.875rem + 3.438vw, 5rem)'}>
-                                Frameworks / Tools
-                            </Typography>
-                            <Box display={"flex"} gap={4} padding={5} flexWrap={'wrap'} justifyContent={{xs: 'center', lg: 'flex-start'}}>
-                                <Chip
-                                label="React.js"
-                                color="info"/>
-                                <Chip
-                                label="Git"
-                                color="info"/>
-                                <Chip
-                                label="GitHub"
-                                color="info"/>
-                                <Chip
-                                label="Material UI"
-                                color="info"/>
-                            </Box>
+                            <motion.div 
+                            animate={!starAnim && window.innerWidth > 1200 ? {
+                                opacity: [0, 1],
+                                x: [30, 0]
+                            } : {opacity: 1}}
+                            transition={{
+                                duration: 1.4,
+                                ease: 'easeInOut',
+                                delay: 2.7
+                            }}>
+                                <Typography className="languageTitle" >
+                                    Languages
+                                </Typography>
+                                <Box display={"flex"} gap={4} flexWrap={'wrap'} padding={5} justifyContent={{xs: 'center', lg: 'flex-start'}}>
+                                    <Chip
+                                    label="Python"
+                                    color="info"/>
+                                    <Chip
+                                    label="JavaScript"
+                                    color="info"/>
+                                    <Chip
+                                    label="HTML"
+                                    color="info"/>
+                                    <Chip
+                                    label="CSS"
+                                    color="info"/>
+                                    <Chip
+                                    label="C++"
+                                    color="info"/>
+                                </Box>
+                            </motion.div>
+                            <motion.div
+                            animate={!starAnim && window.innerWidth > 1200 ? {
+                                opacity: [0, 1],
+                                x: [50, 0]
+                            } : {opacity: 1}}
+                            transition={{
+                                duration: 1.4,
+                                ease: 'easeInOut',
+                                delay: 2.9
+                            }}>
+                                <Typography className="languageTitle" mt={'clamp(1.563rem, 0.875rem + 3.438vw, 5rem)'}>
+                                    Frameworks / Tools
+                                </Typography>
+                                <Box display={"flex"} gap={4} padding={5} flexWrap={'wrap'} justifyContent={{xs: 'center', lg: 'flex-start'}}>
+                                    <Chip
+                                    label="React.js"
+                                    color="info"/>
+                                    <Chip
+                                    label="Git"
+                                    color="info"/>
+                                    <Chip
+                                    label="GitHub"
+                                    color="info"/>
+                                    <Chip
+                                    label="Material UI"
+                                    color="info"/>
+                                </Box>
+                            </motion.div>
+                            
                         </Box>
-                        <Box flexGrow={1} display={'flex'} justifyContent={"end"} alignItems={"end"} marginRight={{xs: 0, lg: 'clamp(3.125rem, -5.208rem + 11.111vw, 8.125rem)'}}>
+                        <Box flexGrow={1} display={'flex'} justifyContent={"end"} alignItems={"end"} marginRight={{xs: 0, lg: 'clamp(3.125rem, -5.208rem + 11.111vw, 8.125rem)'}} component={motion.div}
+                        animate={!starAnim && window.innerWidth > 1200 ? {
+                            opacity: [0, 1, 1],
+                            x: [-shift, -shift, 0]
+                        } : {opacity: 1}}
+                        transition={{
+                            duration: 3.5,
+                            ease: 'easeInOut',
+                            delay: 0.5
+                        }}>
                             <Skillstar />
                         </Box>
                     </Box>
