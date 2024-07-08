@@ -61,7 +61,7 @@ body .MuiTypography-root {
 .firstScreen {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .backdrop {
@@ -70,7 +70,7 @@ body .MuiTypography-root {
   left: 0;
   z-index: -2;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   object-fit: cover;
 }
 
@@ -80,7 +80,7 @@ body .MuiTypography-root {
   left: 0;
   z-index: -1;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-image: linear-gradient(
     to bottom,
     rgba(20, 26, 31, 1),
@@ -487,7 +487,7 @@ body .mainDesc {
   line-height: calc(var(--size) * 1.6);
 }
 
-.project:nth-child(2) {
+.project:nth-child(3) {
   pointer-events: none;
 }
 
