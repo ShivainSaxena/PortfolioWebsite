@@ -117,6 +117,8 @@ const Skills = () => {
                   <Chip label="Express.js" color="info" />
                   <Chip label="PostgreSQL" color="info" />
                   <Chip label=".NET" color="info" />
+                  <Chip label="AWS" color="info" />
+                  <Chip label="Linux" color="info" />
                 </Box>
               </motion.div>
             </Box>
