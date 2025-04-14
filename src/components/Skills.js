@@ -119,6 +119,9 @@ const Skills = () => {
                   <Chip label=".NET" color="info" />
                   <Chip label="AWS" color="info" />
                   <Chip label="Linux" color="info" />
+                  <Chip label="LangChain" color="info" />
+                  <Chip label="Docker" color="info" />
+                  <Chip label="Django" color="info" />
                 </Box>
               </motion.div>
             </Box>

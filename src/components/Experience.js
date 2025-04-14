@@ -29,16 +29,54 @@ const Experience = () => {
               }}
             >
               <div class="info">
+                <h3 class="extitle">Frontend Developer</h3>
+                <h4 className="explace">WizRobotics</h4>
+                <h5 className="exdate">Jan 2025 - Apr 2025</h5>
+                <p className="exdescription">
+                  - Developed an AI meeting analyzer using LangChain and
+                  Deepseek to extract engagement insights from transcripts.
+                  <br />
+                  <br />- Architected a multimodal LLM workflow using Gemini to
+                  parse PDFs and generate curriculum JSONs, cutting manual
+                  content creation time by 60%. <br />
+                  <br />- Implemented a Retrieval-Augmented Generation (RAG)
+                  system using hybrid search to improve retrieval accuracy to
+                  select UI components, boosting lesson design efficiency by
+                  50%.
+                </p>
+              </div>
+            </motion.div>
+            <motion.div
+              class="card"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{
+                duration: 1.8,
+                ease: "easeInOut",
+              }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
+            >
+              <div class="info">
                 <h3 class="extitle">Software Developer</h3>
                 <h4 className="explace">SpeechDojo Education Foundation</h4>
                 <h5 className="exdate">Jul 2024 - Present</h5>
                 <p className="exdescription">
-                  - Deployed Moodle on a virtual server and implemented a custom
-                  theme to optimize the student user experience
+                  - Developed an AI-powered interview bot that dynamically
+                  generated personalized questions from job descriptions using a
+                  multi-agent LLM workflow, streamlining candidate assessment
+                  and enabling scalable mock interviews.
                   <br />
-                  <br />- Prototyped an LLM-powered interview bot to analyze
-                  interview responses, offering AI-driven insights on strengths,
-                  weaknesses, and areas for improvement
+                  <br />- Engineered a collaborative tool-calling agent system
+                  integrating Brave Search API for real-time web search, with
+                  outputs aggregated and structured using Pydantic models to
+                  improve response consistency. <br />
+                  <br />- Implemented an end-to-end speech assessment platform
+                  with a Django REST API and frontend speech-to-text pipeline,
+                  providing rubric-based feedback on user responses.
                 </p>
               </div>
             </motion.div>
