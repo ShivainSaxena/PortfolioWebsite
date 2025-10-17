@@ -112,8 +112,8 @@ const Aboutsection = () => {
                   visible: { opacity: 1, translateX: 0 },
                 }}
               >
-                Hi, I am a first year engineering student deeply enthusiastic
-                about programming, web development, and robotics. My fascination
+                Hi, I am an engineering student deeply enthusiastic about
+                programming, web development, and robotics. My fascination
                 resides at the intersection of hardware and software, fueled by
                 a dedicated commitment to crafting innovations that push the
                 boundaries of engineering. My hobbies include reading, playing
